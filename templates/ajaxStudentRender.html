@@ -1,0 +1,30 @@
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+</head>
+
+<body>
+
+	<p><i>
+	{% if found %}
+		The following match your search 
+		<br>
+		criteria:
+	{% else %}
+		No matching students were found.
+		<br>
+		These are the currently registered 
+		<br>
+		students:
+	{% endif %}
+	</i></p>
+
+	<br>
+	<table>
+		<tr><td width="150"><b>Name:</b></td><td width="100"><b>Username:</b></td><td width="100"><b>Email:</b></td></tr>
+		{% for student in results %}
+			<tr><td><a href="/student/{{student.id}}/">{{student.name}}</a></td><td>{{student.userName}}</td><td>{{student.email}}</td></tr>
+		{% endfor %}
+	</table>
+	
+</body>
+</html>	

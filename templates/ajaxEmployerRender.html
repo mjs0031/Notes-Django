@@ -1,0 +1,35 @@
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+</head>
+
+<body>
+
+	<p><i>
+	{% if found %}
+		The following match your search 
+		<br>
+		criteria:
+	{% else %}
+		No matching employers were found.
+		<br>
+		These are the currently registered 
+		<br>
+		employers:
+	{% endif %}
+	</i></p>
+
+	<br>
+	<table>
+		<tr><td width="250"><b>Name:</b></td><td width="250"><b>Email:</b></td><td width="100"><b>On Campus:</b></td><td width="100"><b>State:</b></td></tr>
+		{% for employer in results %}
+			<tr><td><a href="/employer/{{employer.id}}/">{{employer.name}}</a></td><td>{{employer.email}}</td>
+			{% if employer.onCampus %}
+				<td><b>Yes</b></td><td>{{employer.state}}<td></tr>
+			{% else %}
+				<td><b>No</b></td><td>{{employer.state}}<td></tr>			
+			{% endif %}
+		{% endfor %}
+	</table>
+	
+</body>
+</html>	

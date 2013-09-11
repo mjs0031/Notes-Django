@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>Employers</title>
+</head>
+
+<body>
+	<h1><i>Employers: Complete Listing</i></h1>
+
+	<hr>
+	<h3>Currently Hiring:</h3>
+
+	<table>
+		<tr><td width="200"><b>Name:</b></td><td width="300"><b>Email:</b></td><td width="100"><b>On Campus</b></td></tr>
+		{% for employer in employerAll %}
+			<tr><td><a href="/employer/{{employer.id}}/">{{employer.name}}</a></td><td>{{employer.email}}</td>
+			{% if employer.onCampus %}
+				<td>Yes</td>
+			{% else %}
+				<td>No</td>
+			{% endif %}
+			</tr>
+		{% endfor %}
+	</table>
+
+	<br>
+	<hr>
+	<h3>Links:</h3>
+	
+	<ul>
+		<li><a href="/">Homepage</a></li>
+
+		<br>
+		<li><i>Our Database: </i></li>
+		<li><a href="/student/">All Students</a></li>
+		<li><a href="/employer/">All Employers {Current Page}</a></li>
+
+		<br>
+		<li><i>Search Options</i></li>
+		<li><a href="/student/search/">Search For A Student</a></li>
+		<li><a href="/employer/search/">Search For An Employer</a></li>
+		<li><a href="/jobs/search/">Search For A Job</a></li>
+		
+		<br>
+		<li><a href="/logout/">Log-out</a></li>
+	</ul>
+
+</body>
+</html>

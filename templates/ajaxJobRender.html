@@ -1,0 +1,29 @@
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+</head>
+
+<body>
+
+	<p><i>
+	{% if found %}
+		The following match your search 
+		<br>
+		criteria:
+	{% else %}
+		No matching jobs were found.
+		<br>
+		These are all pending jobs.
+	{% endif %}
+	</i></p>
+
+	<br>
+	<table>
+		<tr><td width="150"><i><b>Position:</b></i></td><td width="400"><i><b>Company:</b></i></td>
+																	<td><i><b>Description</b></i></td></tr>
+		{% for job in results %}
+			<tr><td>{{job.name}}</td><td>{{job.employer}}</td><td>{{job.description}}</td></tr>
+		{% endfor %}
+	</table>
+	
+</body>
+</html>	

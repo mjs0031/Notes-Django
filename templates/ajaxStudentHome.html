@@ -1,0 +1,91 @@
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+	<title>Ajax Student Seach</title>
+	
+	<script type = "text/javascript" language = "JavaScript">
+	
+		<!--
+		
+		var asyncRequest;
+		
+		window.onload = function()
+		{
+			document.getElementById('searchButton').onclick = function()
+			{
+				var searchString = document.getElementById('searchBox').value;
+				
+				getContent('/student/search/' + searchString);	    
+			}
+		}
+		
+		function getContent(url)
+		{
+			try
+			{
+				asyncRequest = new XMLHttpRequest();
+				asyncRequest.onreadystatechange = stateChange;
+				asyncRequest.open('GET', url, true)
+				asyncRequest.send( null );
+			}
+			catch(exception)
+			{
+				alert('failed');
+			}
+		}
+		
+		function stateChange()
+		{
+			if ( asyncRequest.readyState == 4 && asyncRequest.status == 200 )
+			{
+				document.getElementById('searchResults').innerHTML = 
+						 asyncRequest.responseText; 
+
+			}
+		}
+		-->
+	
+	</script>
+
+</head>
+
+<body>
+
+	<h1><b><i>Students: Search</i></b></h1>
+	
+	<hr>
+	<h3>Search for a student by name:</h3>
+	<input type='text' size='24' id='searchBox'>
+	</input>
+	<button id='searchButton'>Find Student!</button>
+	
+	<hr>
+	<table id='searchResults'>
+	
+	</table>
+
+	<br>
+	<br>
+	<hr>
+	<h3>Links:</h3>
+
+	<ul>
+			<li><a href="/employer/portal/">Employer Portal</a></li>
+	
+			<br>
+			<li><i>Our Database: </i></li>
+			<li><a href="/student/">All Students</a></li>
+			<li><a href="/employer/">All Employers</a></li>
+	
+			<br>
+			<li><i>Search Options</i></li>
+			<li><a href="/student/search/">Search For A Student {Current Page}</a></li>
+			<li><a href="/employer/search/">Search For An Employer</a></li>
+			<li><a href="/jobs/search/">Search For A Job</a></li>
+			
+			<br>
+			<li><a href="/">Homepage</a></li>
+			<li><a href="/logout/">Log-out</a></li>
+	</ul>
+</body>
+
+</html>
